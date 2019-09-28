@@ -4,7 +4,7 @@ update_engine_client -update
 [ -n "$(grep ^REBOOT_STRATEGY /etc/coreos/update.conf)" ] && sed -i "s@^REBOOT_STRATEGY.*@REBOOT_STRATEGY=off@" /etc/coreos/update.conf || echo 'REBOOT_STRATEGY=off' >>/etc/coreos/update.conf
 systemctl restart update-engine
 [ ! -d /opt/bin ] && mkdir -p /opt/bin
-wget -O /opt/bin/docker-compose https://github.com/docker/compose/releases/download/1.23.1/docker-compose-Linux-x86_64
+wget -O /opt/bin/docker-compose https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64
 cat >/opt/bin/lrzsz <<EOF
 #!/bin/bash
 docker run -ti --rm -v /root/upload:/upload sh0f/lrzsz
